@@ -1,24 +1,40 @@
 <?php echo  $this->extend('Admin/layout/principal'); ?>
 
-<!--Area de Estilos-->
+
+
+
+<?php echo$this->section('titulo'); ?><?php echo $titulo ;?><?php echo $this->endSection(); ?>
+
+
+
+
+
+
 <?php echo $this->section('estilos') ?>
 
-<?php echo $this->endSection() ?>
+<!--Area de Estilos enviados para o template principal-->
 
-
-
-
-<!--Area de Conteudo-->
-<?php echo$this->section('conteudo') ?>
-
-  <?php echo $titulo ?>
 
 <?php echo $this->endSection() ?>
 
 
 
+<?php echo $this->section('conteudo');?>
 
-<!--Area de Scripts-->
-<?php echo $this->section('scripts') ?>
+<?php echo $titulo;?>
 
-<?php echo $this->endSection() ?>
+
+<?php echo $this->endSection();?>
+
+
+
+
+
+<?php echo $this->section('scripts'); ?>
+
+<!--Area de Scripts  enviados para o template principal-->
+
+
+
+
+<?php echo $this->endSection(); ?>
