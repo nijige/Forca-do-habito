@@ -18,7 +18,7 @@ echo  $this->extend('Admin/layout/principal'); ?>
 
 
 
-<link rel="stylesheet" href="url<?php echo site_url('admin/vendors/auto-complete/jquery.css'); ?>" />
+<link rel="stylesheet" href="<?php echo site_url('admin/vendors/auto-complete/jquery-ui.css'); ?>" />
 
 
 
@@ -41,7 +41,7 @@ echo  $this->extend('Admin/layout/principal'); ?>
 
 
         <div class=" ui-widget">
-          <input id="query" name="query" class="form-control bg-light mb-5">
+          <input id="query" name="query" placeholder="Pesquise por um usuário" class="form-control bg-light mb-5">
 
         </div>
 
@@ -60,22 +60,23 @@ echo  $this->extend('Admin/layout/principal'); ?>
             </thead>
             <tbody>
 
-            <?php foreach ($usuarios as $usuario) : ?>
+              <?php foreach ($usuarios as $usuario) : ?>
                 <tr>
 
-                  <td><?php echo $usuario ->nome; ?> </td>
-                  <td><?php echo $usuario->email; ?> </td>
-                  <td><?php echo $usuario->cpf; ?> </td>
+                  <td>
+                    <a href="<?php echo site_url("admin/usuarios/show/$usuario->id");?>">
+
+                  <?php echo $usuario->nome; ?></a>
+
+                </td>
+                  <td><?php echo $usuario->email; ?></td>
+                  <td><?php echo $usuario->cpf; ?></td>
 
 
                   <td><?php echo ($usuario->ativo ? '<label class="badge badge-primary">Sim</label>' : '<label class="badge badge-danger">Não</label>'); ?> </td>
                 </tr>
 
               <?php endforeach; ?>
-
-
-
-
 
             </tbody>
           </table>
@@ -121,40 +122,44 @@ echo  $this->extend('Admin/layout/principal'); ?>
 
               if (data.length < 1) {
                 var data = [{
-                  label: 'Usuario não encontrado',
-                  value: -1
-                }
-              
+                    label: 'Usuario não encontrado',
+                    value: -1
+                  }
+
                 ];
               }
 
               response(data); //Aqui o temos valor do data
             },
 
-            minLenght: 1,
-            select: function(event, ui){
 
-              if(ui.item.value == -1){
+          }); // fim autocomplete
 
-                $(this).val("");
-                return false;
-
-              }else{
-                 window.location.href = '<?php echo  site_url('admin/usuarios/show/')?>' + ui.item.id;
+        },
 
 
+        minLenght: 1,
+        select: function(event, ui) {
+
+          if (ui.item.value == -1) {
+
+            $(this).val("");
+            return false;
+
+          } else {
+            window.location.href = '<?php echo site_url('admin/usuarios/show/');?>' + ui.item.id;
 
 
 
-              }
 
-            }
 
-          });// fim autocomplete
+          }
 
-      },
-   });
-});
+        }
+
+      });//fim do autocompleted
+
+    });
 
 
   </script>

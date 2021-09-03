@@ -40,14 +40,31 @@ class Usuarios extends BaseController{
 
 		}
 
-		echo '<pre>';
+		$usuarios = $this->usuarioModel->procurar($this->request->getGet('term'));
+		$retorno = [];
 
-		print_r( $this->request->getGet());
+		foreach ($usuarios as $usuario){
+			$data['id' ] = $usuario->id;
+			$data[ 'value'] = $usuario->nome;
 
-		exit;
+
+			$retorno[] = $data;
+
+		}
+
+		return $this->response->setJSON($retorno);
+		
+	}
 
 
 
+	public function show ($id = null ){
+
+	}
+
+
+	private function buscaUsuarios(){
+		
 	}
 
 
