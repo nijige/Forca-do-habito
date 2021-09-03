@@ -19,7 +19,7 @@
 
 
 
-<?php echo $this->section('conteudo');?>
+<?php echo $this->section('conteudos');?>
 
 <?php echo $titulo;?>
 

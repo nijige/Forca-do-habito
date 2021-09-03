@@ -8,6 +8,7 @@ class UsuarioModel extends Model
 {
 	protected $table                = 'usuarios';
 	protected $returnType           = 'array';
+	protected $useSoftDelete = true;
 	protected $allowedFields        = ['nome','email','telefone'];
 
 	

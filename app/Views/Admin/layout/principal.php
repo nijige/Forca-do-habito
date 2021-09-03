@@ -21,7 +21,14 @@
 
   <!-- Essa section renderizara  os estilos especificos  da view que estender esse layout-->
   
+
+  
+
   <?= $this->renderSection('estilos') ?>
+
+
+
+  
 
 
 </head>
@@ -245,7 +252,8 @@
 
          <!-- Essa section renderizara  os conteudos especificos  da view que estender esse layout-->
 
-        <?= $this->renderSection('conteudos') ?>
+       
+         <?php echo $this->renderSection('conteudos') ?>
           
         </div>
                  

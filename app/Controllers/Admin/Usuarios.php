@@ -24,7 +24,32 @@ class Usuarios extends BaseController{
 
 		];
 
-		return view('Admin/Usuarios/index',$data);
+		return view('Admin/Usuarios/index', $data);
+
+
 	   
 	}
+
+	public function procurar (){
+
+
+		if(! $this->request->isAJAX()){
+
+			exit('Página não encontrada');
+
+
+		}
+
+		echo '<pre>';
+
+		print_r( $this->request->getGet());
+
+		exit;
+
+
+
+	}
+
+
+	
 }
