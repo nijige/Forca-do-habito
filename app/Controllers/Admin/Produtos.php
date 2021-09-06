@@ -21,8 +21,17 @@ class Produtos extends BaseController
 
 		$data = [
 			'titulo' => 'Listando os produtos ',
-			'produtos' => $this->produtoModel->select('produtos')
-		]
+			'produtos' => $this->produtoModel->select('produtos.*, categorias.nome AS categoria')
+
+			                                  ->join('categorias', 'categorias.id = produtos.categoria_id' )
+											  ->withDeleted(true)
+											  ->paginate(10),
+			'pager'=> $this->produtoModel->pager,
+		];
+
+		return view('Admin/Produtos/index',$data);
+
+
 	    
 
 

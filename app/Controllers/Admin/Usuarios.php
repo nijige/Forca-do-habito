@@ -60,10 +60,25 @@ class Usuarios extends BaseController{
 
 	public function show ($id = null ){
 
+		$usuario = $this->buscarUsuarioOu404($id);
+		$data =[
+			'titulo' =>" Detalhando a categoria $usuario->nome",
+			'usuarios' => $usuario,
+		];
+
+		return view('Admin/Usuarios/show',$data);
+
 	}
 
 
-	private function buscaUsuarios(){
+	private function buscarUsuarioOu404(int $id= null){
+		if(!$id || !$usuario = $this->usuarioModel->withDeleted(true)->where('id',$id)->first()){
+
+			throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound("Não encontramos a categoria $usuario");
+		}
+
+
+		return $usuario;
 		
 	}
 

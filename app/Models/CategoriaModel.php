@@ -47,6 +47,20 @@ class CategoriaModel extends Model
 
 	}
 
+	public function procurar($term){
+
+		if($term ===null){
+			return [];
+		}
+
+		return $this->select('id,nome')
+		                ->like('nome',$term)
+						->withDeleted(true)
+						->get()
+						->getResult();
+
+	}
+
 
 
 
