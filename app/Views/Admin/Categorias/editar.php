@@ -46,7 +46,7 @@ echo  $this->extend('Admin/layout/principal'); ?>
 
                 <?php endif; ?>
 
-                
+                <?php echo form_open("admin/categorias/atualizar/$categoria->id"); ?>
                 <?php echo $this->include('admin/Categorias/form'); ?>
 
                 <a href="<?php site_url("admin/categorias/show/$categoria->id"); ?>" class="btn btn-light text-dark btn-sm">
@@ -54,6 +54,7 @@ echo  $this->extend('Admin/layout/principal'); ?>
                     Voltar
                 </a>
 
+                <?php echo form_close(); ?>
 
 
 
