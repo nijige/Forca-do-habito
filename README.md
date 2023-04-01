@@ -19,7 +19,3 @@ ambiente de desenvolvimento web no Windows. Com ele criei  aplicações web com 
 
  VS Code
 
-<<<<<<< HEAD
-=======
-
->>>>>>> main
