@@ -3,7 +3,7 @@
 <h1>Força do Hábito</h1> 
 
 <p align="center">
-  <img src="https://img.shields.io/static/v1?label=Flutter&message=deploy&color=blue&style=for-the-badge&logo=phpdotjs&logoColor=whiteo=PHP"/>
+  <img src="https://img.shields.io/static/v1?label=&message=deploy&color=blue&style=for-the-badge&logo=phpdotjs&logoColor=whiteo=PHP"/>
   <img src="http://img.shields.io/static/v1?label=License&message=MIT&color=green&style=for-the-badge"/>
   <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/>
 </p>
